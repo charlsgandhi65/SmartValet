@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
+    android:padding="24dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back_arrow"
+            android:padding="8dp"
+            android:background="@drawable/rounded_card_background"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="QR Scanner"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- Scan Type -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCAN TYPE"
+        android:textColor="@color/text_secondary"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="12dp" />
+
+    <RadioGroup
+        android:id="@+id/radioScanType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+
+        <RadioButton
+            android:id="@+id/radioEntry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Entry"
+            android:textColor="@color/text_primary"
+            android:padding="12dp"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioExit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exit"
+            android:textColor="@color/text_primary"
+            android:padding="12dp" />
+
+        <RadioButton
+            android:id="@+id/radioValetRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Valet Request"
+            android:textColor="@color/text_primary"
+            android:padding="12dp" />
+
+        <RadioButton
+            android:id="@+id/radioCarFetch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Car Fetch"
+            android:textColor="@color/text_primary"
+            android:padding="12dp" />
+    </RadioGroup>
+
+    <!-- QR Code Input -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ENTER QR CODE"
+        android:textColor="@color/text_secondary"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editQRCode"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Paste or scan QR code"
+        android:textColorHint="@color/text_secondary"
+        android:textColor="@color/text_primary"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:background="@drawable/rounded_input_background"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📷 Scan with Camera"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#2196F3"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnManualEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="✓ Process QR Code"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#7C3AED"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Scan Result -->
+    <TextView
+        android:id="@+id/tvScanResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scan or enter QR code above"
+        android:textColor="#666666"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:background="@drawable/input_bg"
+        android:gravity="center"
+        android:minHeight="120dp" />
+
+</LinearLayout>
+

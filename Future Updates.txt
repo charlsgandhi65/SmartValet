@@ -1,0 +1,8 @@
+Updates:
+
+Authorize the car number through the government and then accept the booking.
+Bring location by using the google maps location.
+Adding photos to the cloud of the cars.
+Making real qr codes.
+VIP segment for the VIPs of the event.
+Use it at fastrack.

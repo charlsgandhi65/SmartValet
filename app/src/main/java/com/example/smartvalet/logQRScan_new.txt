@@ -1,0 +1,51 @@
+﻿    private void logQRScan(String bookingId, String qrCode, String scanType) {
+        new Thread(() -> {
+            try {
+                // Check for duplicate exit scan
+                if (scanType.equals("exit")) {
+                    JSONArray existingExits = SupabaseClientInstance.getInstance()
+                        .selectFromTable("qr_logs",
+                            "booking_id=eq." + bookingId + "&scan_type=eq.exit",
+                            accessToken != null ? accessToken : "");
+                    
+                    if (existingExits.length() > 0) {
+                        runOnUiThread(() -> {
+                            Toast.makeText(QRScannerActivity.this,
+                                " This QR code has already been scanned for exit!",
+                                Toast.LENGTH_LONG).show();
+                        });
+                        return; // Don't log duplicate
+                    }
+                }
+                
+                JSONObject logData = new JSONObject();
+                logData.put("booking_id", bookingId);
+                logData.put("qr_code", qrCode);
+                logData.put("scanned_by_staff_id", staffId);
+                logData.put("scan_type", scanType);
+                logData.put("scan_timestamp", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US).format(new Date()));
+                logData.put("vehicle_status", scanType.equals("entry") ? "parked" : "retrieved");
+
+                SupabaseClientInstance.getInstance()
+                    .insertIntoTable("qr_logs", logData, accessToken != null ? accessToken : "");
+
+                // If exit scan, update booking status to inactive
+                if (scanType.equals("exit")) {
+                    JSONObject updateData = new JSONObject();
+                    updateData.put("status", "inactive");
+                    
+                    SupabaseClientInstance.getInstance()
+                        .updateTable("booked_parking",
+                            "booking_id=eq." + bookingId,
+                            updateData,
+                            accessToken != null ? accessToken : "");
+                    
+                    System.out.println("QRScanner: Updated booking " + bookingId + " status to inactive");
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+}
