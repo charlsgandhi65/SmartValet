@@ -33,7 +33,7 @@
 **On Physical Device:**
 - Make sure WiFi or Mobile Data is ON
 - Try opening a browser and visiting https://google.com
-- Check if you can access https://ywvkxqpwnnanscxgkszq.supabase.co in Chrome
+- Check if you can access https://smyeqsobctlhwoqcards.supabase.co in Chrome
 
 **On Emulator:**
 - Sometimes emulator network gets stuck
@@ -50,7 +50,7 @@
 
 **Common Errors:**
 
-**Error**: `java.net.UnknownHostException: Unable to resolve host "ywvkxqpwnnanscxgkszq.supabase.co"`
+**Error**: `java.net.UnknownHostException: Unable to resolve host "smyeqsobctlhwoqcards.supabase.co"`
 **Cause**: No internet connection or DNS issue
 **Fix**: 
 - Check internet connection
@@ -68,7 +68,7 @@
 ### Step 4: Test Supabase URL Directly
 Open this URL in your phone/computer browser:
 ```
-https://ywvkxqpwnnanscxgkszq.supabase.co/rest/v1/
+https://smyeqsobctlhwoqcards.supabase.co/rest/v1/
 ```
 
 **Expected**: Should show a JSON error (this is normal - means server is reachable)
@@ -119,7 +119,7 @@ After rebuilding, try this test:
 6. Look for these lines:
    ```
    SupabaseClientInstance: Attempting login for: [email]
-   SupabaseClientInstance: URL: https://ywvkxqpwnnanscxgkszq.supabase.co
+   SupabaseClientInstance: URL: https://smyeqsobctlhwoqcards.supabase.co
    SupabaseClientInstance: Got response, code: [number]
    ```
 

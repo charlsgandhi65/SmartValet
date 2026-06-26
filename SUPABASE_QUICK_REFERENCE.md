@@ -342,9 +342,9 @@ SELECT * FROM public.booked_parking WHERE qr_code IS NULL OR qr_code = '';
 
 ### API URL Format
 Your Supabase REST API endpoints follow this pattern:
-- **Base URL**: `https://ywvkxqpwnnanscxgkszq.supabase.co`
+- **Base URL**: `https://smyeqsobctlhwoqcards.supabase.co`
 - **Tables**: `/rest/v1/{table_name}`
-- **Full Example**: `https://ywvkxqpwnnanscxgkszq.supabase.co/rest/v1/customer`
+- **Full Example**: `https://smyeqsobctlhwoqcards.supabase.co/rest/v1/customer`
 
 ### Filtering (PostgREST format)
 ```
